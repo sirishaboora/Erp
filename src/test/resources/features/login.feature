@@ -28,8 +28,8 @@ Feature: login and logout
 
   @tc-3
   Scenario: Open login page and do logout
-    Given navigate to "http://stage.survey.hff.ukkoteknik.com/admin/"
-    Then enter userid with "admin@gmail.com"
-    Then enter password with "1111"
+    Given navigate to "http://test.hff.erp.ukkoteknik.com/hff/#/common/login"
+    Then enter userid with "accounts"
+    Then enter password with "8f5@INV"
     And click on login button
-    Then click on city submodule
+    Then click on master data
