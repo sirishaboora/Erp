@@ -2,32 +2,30 @@ Feature: login and logout
 
   @tc-1
   Scenario: Open login page and do logout
-    Given navigate to "http://stage.survey.hff.ukkoteknik.com/admin/"
-    Then enter userid with "admin@gmail.com"
-    Then enter password with "1111"
+    Given navigate to "http://test.hff.erp.ukkoteknik.com/hff/#/common/login"
+    Then enter userid with "accounts"
+    Then enter password with "8f5@INV"
     And click on login button
+    Then click on profile
     Then click on logout
-    Then click on ok
 
   @tc-2
   Scenario Outline: validate login fields
-    Given navigate to "http://stage.survey.hff.ukkoteknik.com/admin/"
+    Given navigate to "http://test.hff.erp.ukkoteknik.com/hff/#/common/login"
     Then enter userid with "<x>"
     Then enter password with "<y>"
     And click on login button
     Then validate userid and password fields with "<z>"
-    
 
     Examples: 
-      | x               | y    | z             |
-      |                 |      | blank         |
-      | admin@gmail.com |      | blankpwd      |
-      |                 | 1111 | blankuserid   |
-      | admin@gmail.com | 2222 | invalidpwd    |
-      | admi@gmail.com  | 1111 | invaliduserid |
-      | admin@gmail.com | 1111 | valid         |
-      
-      
+      | x        | y       | z             |
+      |          |         | blank         |
+      | accounts |         | blankpwd      |
+      |          | 8f5@INV | blankuserid   |
+      | accounts | 8f5@INW | invalidpwd    |
+      | account  | 8f5@INV | invaliduserid |
+      | accounts | 8f5@INV | valid         |
+
   @tc-3
   Scenario: Open login page and do logout
     Given navigate to "http://stage.survey.hff.ukkoteknik.com/admin/"

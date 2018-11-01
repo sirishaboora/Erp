@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import env.BaseTest;
+import methods.ExplicitWaitMethods;
 
 public class Loginpage implements BaseTest
 {
@@ -25,11 +26,7 @@ public class Loginpage implements BaseTest
 	@FindBy(xpath="//*[text()='Sign Out']")
 	public WebElement logout;
 	
-	@FindBy(xpath="//*[text()='The email is required']")
-	public WebElement blankEmailErr;
-	
-	@FindBy(xpath="//*[text()='The password is required']")
-	public WebElement blankPwdErr;
+
 	
 	@FindBy(xpath="//*[text()='User Authentication is Failed']")
 	public WebElement invalidEmailPwdErr;
@@ -46,12 +43,15 @@ public class Loginpage implements BaseTest
 	
 	public void fillUserId(String x)
 	{
+		//ExplicitWaitMethods.waitForVisibility(userid);
+		userid.clear();
 		inputObj.enterText(userid, x);
 		
 	}
 	
 	public void fillpwd(String x)
 	{
+		pwd.clear();
 		inputObj.enterText(pwd, x);
 		
 	}
@@ -63,12 +63,12 @@ public class Loginpage implements BaseTest
 	
 	public void clickLogout()
 	{
-		clickObj.click(logoutBtn);
+		clickObj.click(logout);
 	}
 	
-	public void clickOk()
+	public void clickProfile()
 	{
-		clickObj.click(okForLogout);
+		clickObj.click(profile);
 	}
 }
 
