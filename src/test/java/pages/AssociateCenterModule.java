@@ -5,8 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import env.BaseTest;
 import methods.ExplicitWaitMethods;
@@ -152,10 +151,30 @@ public class AssociateCenterModule implements BaseTest
 	
 	public void clickAssociateCenter()
 	{
+		ExplicitWaitMethods.waitForVisibility(associateCenter);
 		clickObj.click(associateCenter);
 	}
 	
+	public void clickMasterData()
+	{
+		clickAssociateCenter();
+		ExplicitWaitMethods.waitForVisibility(masterData);
+		clickObj.click(masterData);
+	}
 	
+	public void clickMasterDataEmployee()
+	{
+		clickMasterData();
+		ExplicitWaitMethods.waitForVisibility(masterDataEmployee);
+		clickObj.click(masterDataEmployee);
+	}
+	
+	public void clickMasterDataConsultant()
+	{
+		clickMasterData();
+		ExplicitWaitMethods.waitForVisibility(masterDataConsultant);
+		clickObj.click(masterDataConsultant);
+	}
 	
 
 	
