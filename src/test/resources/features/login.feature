@@ -33,3 +33,7 @@ Feature: login and logout
     Then enter password with "8f5@INV"
     And click on login button
     Then click on master data
+    Then click on add button
+    Then enter employee name with "vishal"
+    Then select option "1"
+    Then enter dob as "08141995"

@@ -157,7 +157,7 @@ public class AssociateCenterModule implements BaseTest
 	
 	public void clickMasterData()
 	{
-		clickAssociateCenter();
+		
 		ExplicitWaitMethods.waitForVisibility(masterData);
 		clickObj.click(masterData);
 	}

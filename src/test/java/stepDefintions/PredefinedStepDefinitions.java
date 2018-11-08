@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import methods.ExplicitWaitMethods;
 import methods.TestCaseFailed;
 import pages.AssociateCenterModule;
+import pages.Employee;
 import pages.Loginpage;
 
 import cucumber.api.Scenario;
@@ -24,6 +25,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	Scenario s;
 	public Loginpage lp;
 	public AssociateCenterModule m;
+	public Employee employee;
 	
 	@Before
 	public void method1(Scenario x) throws Exception
@@ -32,6 +34,7 @@ public class PredefinedStepDefinitions implements BaseTest
 		this.s=x;
 		lp=new Loginpage(driver);
 		m=new AssociateCenterModule(driver);
+		employee=new Employee(driver);
 	}
 	
 	//Navigation Steps
@@ -293,7 +296,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	@Then("^click on master data$")
 	public void clickCitySubModule()
 	{
-		m.clickMasterData();
+		m.clickMasterDataEmployee();
 	}
 	
 	@Then("^click on logout and click ok$")
@@ -302,6 +305,38 @@ public class PredefinedStepDefinitions implements BaseTest
 		lp.clickProfile();
 		lp.clickLogout();
 	}
+	@Then("^get data$")
+	public void getData()
+	{
+		employee.getEmployeeName();
+		
+	}
+	
+	@Then("^click on add button$")
+	public void clickAdd()
+	{
+		employee.addEmployee.click();
+	}
+	
+	@Then("^enter employee name with \"(.*)\"$")
+	public void enterEmployeeName(String x)
+	{
+		employee.fillEmployeeName(x);
+	}
+	
+	@Then("^select option \"(.*)\"$")
+	public void selectDropDown(String y)
+	{
+		employee.selectEmployeeType(y);
+	}
+	
+	@Then("^enter dob as \"(.*)\"$")
+	public void enterDateOfBirth(String z)
+	{
+		employee.enterDOB(z);
+	}
+	
+	
 	
 	@And("^close site$")
 	public void closeSite()

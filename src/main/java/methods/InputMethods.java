@@ -60,11 +60,11 @@ public class InputMethods extends SelectElementByType implements BaseTest
 	@param option : String : Option to select
 	@param accessName : String : Locator value
 	*/
-	public void selectOptionFromDropdown(WebElement element, String by, String option)
+	public void selectOptionFromDropdownByIndex(WebElement element, int option)
 	{
 		//dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(getelementbytype(accessType, accessName)));
-		selectList = new Select(element);
-		selectelementfromdropdownbytype(selectList,by,option);
+		selectList=new Select(element);
+		selectList.selectByIndex(option);
 	}
 	
 	//method to select all option from dropdwon list
