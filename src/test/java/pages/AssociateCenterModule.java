@@ -176,6 +176,55 @@ public class AssociateCenterModule implements BaseTest
 		clickObj.click(masterDataConsultant);
 	}
 	
+	public void clickMasterDataContractStaff()
+	{
+		clickMasterData();
+		ExplicitWaitMethods.waitForVisibility(masterDataContractStaff);
+		clickObj.click(masterDataContractStaff);
+		
+	}
+	
+	public  void clickMasterDataCHFsCHEsBCPs()
+	{
+		clickMasterData();
+		ExplicitWaitMethods.waitForVisibility(masterDataCHFsCHEsBCPs);
+		clickObj.click(masterDataCHFsCHEsBCPs);
+		
+	}
+	
+	public void clickMasterDataProgramAssociate()
+	{
+		clickMasterData();
+		ExplicitWaitMethods.waitForVisibility(masterDataProgramAssociate);
+		clickObj.click(masterDataProgramAssociate);
+	}
+	
+	public void clickMasterDataVolunteers()
+	{
+		clickMasterData();
+		ExplicitWaitMethods.waitForVisibility(masterDataVolunteers);
+		clickObj.click(masterDataVolunteers);
+	}
+	
+	public void clickMasterDataStudent()
+	{
+		clickMasterData();
+		ExplicitWaitMethods.waitForVisibility(masterDataStudent);
+		clickObj.click(masterDataStudent);
+	}
+	
+	public void clickMasterDataCHFMapping()
+	{
+		clickMasterData();
+		ExplicitWaitMethods.waitForVisibility(masterDataCHFMapping);
+		clickObj.click(masterDataCHFMapping);
+	}
+	
+	
+	
+	
+	
+	
 
 	
 }

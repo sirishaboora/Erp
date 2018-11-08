@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import env.BaseTest;
+import methods.ExplicitWaitMethods;
 
 public class Dashboard implements BaseTest 
 {
@@ -27,7 +28,7 @@ public class Dashboard implements BaseTest
 	@FindBy(xpath="//*[@class='panel panel-org panel-colorful']")
 	public WebElement organizationCenter;
 	
-	@FindBy(xpath="panel panel-cent panel-colorful")
+	@FindBy(xpath="//*[@class='panel panel-cent panel-colorful']")
 	public WebElement reportsCenter;
 	
 	public Dashboard(WebDriver x)
@@ -38,31 +39,37 @@ public class Dashboard implements BaseTest
 	
 	public void clickAssociateCenter()
 	{
+		ExplicitWaitMethods.waitForVisibility(associateCener);
 		clickObj.click(associateCener);
 	}
 	
 	public void clickVendorCenter()
 	{
+		ExplicitWaitMethods.waitForVisibility(vendorCenter);
 		clickObj.click(vendorCenter);
 	}
 	
 	public void clickDonorCustomerCenter()
 	{
+		ExplicitWaitMethods.waitForVisibility(donorCustomerCenter);
 		clickObj.click(donorCustomerCenter);
 	}
 	
 	public void clickBankCenter()
 	{
+		ExplicitWaitMethods.waitForVisibility(bankCenter);
 		clickObj.click(bankCenter);
 	}
 	
 	public void clickOrganizationCenter()
 	{
+		ExplicitWaitMethods.waitForVisibility(organizationCenter);
 		clickObj.click(organizationCenter);
 	}
 	
 	public void clickReportsCenter()
 	{
-		clickObj.click(vendorCenter);
+		ExplicitWaitMethods.waitForVisibility(reportsCenter);
+		clickObj.click(reportsCenter);
 	}
 }
